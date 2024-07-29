@@ -1,0 +1,57 @@
+:root{
+    --bg-main : #fff;
+    --bg-white : #EEEDEB;
+    --bg-dark : #201E43;
+    --bg-btn-primary : #201E43;
+    --bg-btn-secondery : #EEEDEB;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--bg-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+
+#button{
+    display: block;
+    background-color: var(--bg-btn-primary);
+    border-radius: 50px;
+    width: 180px;
+    height: 80px;
+    position: relative;
+    cursor: pointer;
+}
+#button::before{
+    position: absolute;
+    content: "";
+    background-color: var(--bg-btn-secondery);
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 4px white;
+    transition: all .4s linear;
+
+}
+
+input:checked + #button{
+background-color: var(--bg-white);
+}
+input:checked + #button::before{
+    box-shadow: 0px 0px 4px black;
+    background-color: var(--bg-btn-primary);
+    left: 60%;
+}
+
